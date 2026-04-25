@@ -1,65 +1,150 @@
-import Image from "next/image";
+import { LandingPage } from "@/components/landing-page";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ActiveHive",
+  url: "https://activehive.com",
+  logo: "https://activehive.com/images/logo.svg",
+  description:
+    "Nigeria's #1 gym management platform. Manage members, classes, staff, and payments from a single dashboard.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+234-938-8338",
+    contactType: "customer service",
+    email: "mail@activehive.com",
+    availableLanguage: "English",
+  },
+  areaServed: "NG",
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "ActiveHive",
+  url: "https://activehive.com",
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "ActiveHive",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web, iOS, Android",
+  description:
+    "All-in-one gym management software for Nigerian gym owners. Features include member management, class scheduling, staff management, multi-location support, and analytics.",
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Starter",
+      price: "49",
+      priceCurrency: "NGN",
+    },
+    {
+      "@type": "Offer",
+      name: "Professional",
+      price: "99",
+      priceCurrency: "NGN",
+    },
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "500",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How does the free trial work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You can start with a 14-day free trial with full access to all features. No credit card required. Cancel anytime during the trial period with no charges.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I manage multiple gym locations?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes! ActiveHive supports multiple locations. The Professional plan includes up to 3 locations, and the Enterprise plan offers unlimited locations with advanced multi-location management features.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What payment methods do you accept?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We accept all major credit cards (Visa, MasterCard, American Express) and ACH transfers for Enterprise plans. All payments are processed securely through our encrypted payment gateway.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is my data secure?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Absolutely. We use enterprise-grade encryption, regular security audits, and comply with industry standards. Your data is backed up daily and stored in secure, redundant data centers.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I cancel my subscription anytime?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, you can cancel your subscription at any time. There are no long-term contracts or cancellation fees. Your access will continue until the end of your current billing period.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer training for my staff?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes! We provide comprehensive onboarding, video tutorials, documentation, and live training sessions. Enterprise customers also receive dedicated training sessions with our team.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I integrate with other software?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ActiveHive offers integrations with popular fitness apps, payment processors, and accounting software. Enterprise plans include custom integration development based on your specific needs.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What kind of support do you provide?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "All plans include email support. Professional plans get priority support with faster response times. Enterprise customers receive 24/7 phone support and a dedicated account manager.",
+      },
+    },
+  ],
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <LandingPage />
+    </>
   );
 }
