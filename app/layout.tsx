@@ -42,6 +42,13 @@ export const metadata: Metadata = {
   creator: "ActiveHive",
   metadataBase: new URL("https://activehive.com"),
   alternates: { canonical: "/" },
+  icons: {
+    icon: [
+      { url: "/images/logo.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/images/logo.svg",
+    apple: "/images/logo.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_NG",
