@@ -5,16 +5,31 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
   --color-border: var(--border);
+  --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-bebas: var(--font-bebas);
-  --font-main: var(--font-satoshi);
+
+  /* Font utilities — reference the CSS vars injected by next/font on <html> */
+  --font-bebas: var(--font-bebas-face);
+  --font-main: var(--font-satoshi-face);
+
+  /* Accordion animations for Radix UI */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 }
@@ -43,13 +58,26 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #ffffff;
-  --foreground: #171717;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+
   --primary: #fabe12;
   --primary-foreground: #010100;
+
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
 }
 
@@ -58,19 +86,22 @@
     @apply border-border;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
+
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-satoshi, Arial, Helvetica, sans-serif);
+    font-family: var(--font-satoshi-face, "Satoshi", ui-sans-serif, system-ui, -apple-system, sans-serif);
   }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: var(--font-bebas, Arial, Helvetica, sans-serif);
+    font-family: var(--font-bebas-face, "Bebas Neue", ui-sans-serif, system-ui, -apple-system, sans-serif);
     letter-spacing: 0.02em;
   }
 }

@@ -277,7 +277,6 @@ export function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mx-auto mt-6 max-w-2xl text-lg font-light text-white/70"
-            style={{ fontFamily: "var(--font-satoshi, Arial)" }}
           >
             The all-in-one platform for gym owners to manage members, classes,
             staff, and locations. Streamline your operations and grow your
@@ -391,10 +390,7 @@ export function LandingPage() {
             <h2 className="mt-3 text-4xl text-white md:text-5xl">
               EVERYTHING YOU NEED TO RUN YOUR GYM
             </h2>
-            <p
-              className="mt-4 font-light text-white/55"
-              style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-            >
+            <p className="mt-4 font-light text-white/55">
               Powerful features designed to help you manage every aspect of your
               fitness business.
             </p>
@@ -414,10 +410,7 @@ export function LandingPage() {
                     <feature.icon size={22} className="text-primary" />
                   </div>
                   <h3 className="mt-5 text-xl text-white">{feature.title}</h3>
-                  <p
-                    className="mt-2 text-sm font-light leading-relaxed text-white/50"
-                    style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-                  >
+                  <p className="mt-2 text-sm font-light leading-relaxed text-white/50">
                     {feature.description}
                   </p>
                 </div>
@@ -443,10 +436,7 @@ export function LandingPage() {
               <h2 className="mt-3 text-4xl text-white md:text-5xl">
                 THE PLATFORM GYM OWNERS TRUST
               </h2>
-              <p
-                className="mt-4 font-light text-white/55"
-                style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-              >
+              <p className="mt-4 font-light text-white/55">
                 Join hundreds of gym owners who trust ActiveHive to power their
                 fitness businesses.
               </p>
@@ -463,12 +453,7 @@ export function LandingPage() {
                     <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20">
                       <IconCheck size={11} className="text-primary" />
                     </div>
-                    <span
-                      className="text-sm text-white/70"
-                      style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-                    >
-                      {benefit}
-                    </span>
+                    <span className="text-sm text-white/70">{benefit}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -486,12 +471,7 @@ export function LandingPage() {
                   Create Free Account
                   <IconChevronRight size={16} />
                 </a>
-                <p
-                  className="text-xs text-white/35"
-                  style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-                >
-                  No credit card required
-                </p>
+                <p className="text-xs text-white/35">No credit card required</p>
               </motion.div>
             </motion.div>
 
@@ -576,10 +556,7 @@ export function LandingPage() {
                 YOUR FITNESS JOURNEY,{" "}
                 <span className="text-primary">UPGRADED</span>
               </h2>
-              <p
-                className="mt-4 font-light text-white/55"
-                style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-              >
+              <p className="mt-4 font-light text-white/55">
                 The ActiveHive mobile app gives gym members the tools to stay
                 consistent, connected, and in control of their fitness.
               </p>
@@ -596,12 +573,7 @@ export function LandingPage() {
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                       <Icon size={16} className="text-primary" />
                     </div>
-                    <span
-                      className="text-sm text-white/65"
-                      style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-                    >
-                      {label}
-                    </span>
+                    <span className="text-sm text-white/65">{label}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -668,12 +640,7 @@ export function LandingPage() {
                           </p>
                         </div>
                         <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center">
-                          <span
-                            className="text-sm text-primary"
-                            style={{
-                              fontFamily: "var(--font-bebas, Arial)",
-                            }}
-                          >
+                          <span className="font-bebas text-sm text-primary">
                             AJ
                           </span>
                         </div>
@@ -752,10 +719,7 @@ export function LandingPage() {
             <h2 className="mt-3 text-4xl text-white md:text-5xl">
               SIMPLE, TRANSPARENT PRICING
             </h2>
-            <p
-              className="mt-4 font-light text-white/55"
-              style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-            >
+            <p className="mt-4 font-light text-white/55">
               Choose the plan that fits your gym&apos;s needs. All plans include
               a 14-day free trial.
             </p>
@@ -790,10 +754,7 @@ export function LandingPage() {
                   )}
                   <div className="relative">
                     <h3 className="text-2xl text-white">{plan.name}</h3>
-                    <p
-                      className="mt-1 text-sm font-light text-white/45"
-                      style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-                    >
+                    <p className="mt-1 text-sm font-light text-white/45">
                       {plan.description}
                     </p>
                     <div className="mt-5">
@@ -813,10 +774,7 @@ export function LandingPage() {
                           <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15">
                             <IconCheck size={11} className="text-primary" />
                           </div>
-                          <span
-                            className="text-sm text-white/60"
-                            style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-                          >
+                          <span className="text-sm text-white/60">
                             {feature}
                           </span>
                         </li>
@@ -857,10 +815,7 @@ export function LandingPage() {
             <h2 className="mt-3 text-4xl text-white md:text-5xl">
               FREQUENTLY ASKED QUESTIONS
             </h2>
-            <p
-              className="mt-4 font-light text-white/55"
-              style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-            >
+            <p className="mt-4 font-light text-white/55">
               Everything you need to know about ActiveHive.
             </p>
           </motion.div>
@@ -909,10 +864,7 @@ export function LandingPage() {
                   <br />
                   <span className="text-primary">MANAGEMENT TODAY</span>
                 </h2>
-                <p
-                  className="mx-auto mt-6 max-w-lg font-light text-white/55"
-                  style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-                >
+                <p className="mx-auto mt-6 max-w-lg font-light text-white/55">
                   Join ActiveHive and experience the difference. Start your free
                   trial now — no credit card required.
                 </p>
@@ -924,10 +876,7 @@ export function LandingPage() {
                     Get Started Free
                     <IconChevronRight size={16} />
                   </a>
-                  <p
-                    className="text-xs text-white/35"
-                    style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-                  >
+                  <p className="text-xs text-white/35">
                     Questions?{" "}
                     <a
                       href="mailto:mail@activehive.com"
@@ -949,10 +898,7 @@ export function LandingPage() {
           <div className="grid gap-10 md:grid-cols-4">
             <div>
               <Logo path="/" />
-              <p
-                className="mt-4 text-sm font-light text-white/35"
-                style={{ fontFamily: "var(--font-satoshi, Arial)" }}
-              >
+              <p className="mt-4 text-sm font-light text-white/35">
                 The all-in-one platform for gym management in Nigeria.
               </p>
             </div>

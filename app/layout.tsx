@@ -11,14 +11,14 @@ const satoshi = localFont({
     { path: "./fonts/Satoshi-Bold.otf", weight: "700", style: "normal" },
     { path: "./fonts/Satoshi-Black.otf", weight: "900", style: "normal" },
   ],
-  variable: "--font-satoshi",
+  variable: "--font-satoshi-face",
   display: "swap",
 });
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-bebas",
+  variable: "--font-bebas-face",
   display: "swap",
 });
 
