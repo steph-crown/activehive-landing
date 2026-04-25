@@ -26,6 +26,7 @@ import {
   IconUsers,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { APP_URL } from "@/lib/urls";
 
 const features = [
   {
@@ -223,13 +224,17 @@ export function LandingPage() {
           </div>
           <div className="flex items-center gap-3">
             <a
-              href="/login"
+              href={`${APP_URL}/login`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden text-sm text-white/60 transition-colors hover:text-white md:block"
             >
               Login
             </a>
             <a
-              href="/signup"
+              href={`${APP_URL}/signup`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >
               Start Free Trial
@@ -290,14 +295,18 @@ export function LandingPage() {
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <a
-              href="/signup"
+              href={`${APP_URL}/signup`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
             >
               Start Free Trial
               <IconChevronRight size={16} />
             </a>
             <a
-              href="/login"
+              href={`${APP_URL}/login`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/10 sm:w-auto"
             >
               Login to Dashboard
@@ -465,7 +474,9 @@ export function LandingPage() {
                 className="mt-10 flex items-center gap-4"
               >
                 <a
-                  href="/signup"
+                  href={`${APP_URL}/signup`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                   Create Free Account
@@ -781,7 +792,9 @@ export function LandingPage() {
                       ))}
                     </ul>
                     <a
-                      href="/signup"
+                      href={`${APP_URL}/signup`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`mt-8 flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-medium transition-colors ${
                         plan.popular
                           ? "bg-primary text-primary-foreground hover:bg-primary/90"
@@ -870,7 +883,9 @@ export function LandingPage() {
                 </p>
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <a
-                    href="/signup"
+                    href={`${APP_URL}/signup`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                   >
                     Get Started Free
