@@ -1171,7 +1171,7 @@ export function LandingPage() {
                   value={`item-${i}`}
                   className="border-b border-white/10"
                 >
-                  <AccordionTrigger className="text-left text-sm font-medium text-white hover:text-primary hover:no-underline [&[data-state=open]]:text-primary">
+                  <AccordionTrigger className="text-left text-sm font-sans font-medium text-white hover:text-primary hover:no-underline [&[data-state=open]]:text-primary">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-sm font-light text-white/50">
