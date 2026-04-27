@@ -33,37 +33,37 @@ import { APP_URL } from "@/lib/urls";
 const painPoints = [
   {
     icon: IconChartBar,
-    title: "You're tracking members in Excel or a notebook",
+    title: "Member Records in Excel Sheets",
     description:
       "Every day, someone's record is missing, outdated, or just wrong — and you won't find out until it becomes a problem.",
   },
   {
     icon: IconBell,
-    title: "Subscriptions expire and members disappear",
+    title: "Subscriptions Expire Unnoticed",
     description:
       "Without automated reminders, members forget to renew. By the time you notice, they've already joined the gym down the road.",
   },
   {
     icon: IconCreditCard,
-    title: "You can't tell if your gym is actually profitable",
+    title: "No Clear View of Your Revenue",
     description:
       "Payments come in via cash, transfer, and card. Nobody has a complete picture of what was actually collected this month.",
   },
   {
     icon: IconCalendar,
-    title: "Attendance is still a paper register at reception",
+    title: "Paper Attendance Register at Reception",
     description:
       "Members sign for each other, staff falsify entries, and there's no way to audit it. Fraud is invisible until money is gone.",
   },
   {
     icon: IconMapPin,
-    title: "Managing more than one location feels impossible",
+    title: "Multiple Locations, Zero Visibility",
     description:
       "Each branch runs differently. Staff call you constantly. You have no single view of what's happening across your business.",
   },
   {
     icon: IconUsers,
-    title: "You can't tell what your staff are actually doing",
+    title: "No Accountability for Staff",
     description:
       "No visibility into trainer assignments, check-in logs, or daily operations. Accountability runs on trust alone.",
   },
@@ -358,8 +358,7 @@ export function LandingPage() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-6xl leading-none text-white md:text-8xl"
           >
-            RUN YOUR GYM.{" "}
-            <span className="text-primary">NOT YOUR</span>
+            RUN YOUR GYM. <span className="text-primary">NOT YOUR</span>
             <br />
             SPREADSHEETS.
           </motion.h1>
@@ -392,9 +391,9 @@ export function LandingPage() {
             ].map((item) => (
               <span
                 key={item}
-                className="flex items-center gap-1.5 text-xs text-white/50"
+                className="flex items-center gap-1.5 text-sm text-white/50"
               >
-                <IconCheck size={12} className="shrink-0 text-primary" />
+                <IconCheck size={16} className="shrink-0 text-primary" />
                 {item}
               </span>
             ))}
@@ -519,13 +518,11 @@ export function LandingPage() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
                 <div className="h-full rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5">
-                    <point.icon size={22} className="text-white/35" />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                    <point.icon size={22} className="text-primary" />
                   </div>
-                  <h3 className="mt-5 text-base font-medium text-white">
-                    {point.title}
-                  </h3>
-                  <p className="mt-2 text-sm font-light leading-relaxed text-white/40">
+                  <h3 className="mt-5 text-xl text-white">{point.title}</h3>
+                  <p className="mt-2 text-sm font-light leading-relaxed text-white/50">
                     {point.description}
                   </p>
                 </div>
@@ -1202,7 +1199,9 @@ export function LandingPage() {
                 <h2 className="text-4xl text-white md:text-5xl">
                   YOUR GYM WON&apos;T RUN ITSELF.
                   <br />
-                  <span className="text-primary">ACTIVEHIVE GETS PRETTY CLOSE.</span>
+                  <span className="text-primary">
+                    ACTIVEHIVE GETS PRETTY CLOSE.
+                  </span>
                 </h2>
                 <p className="mx-auto mt-6 max-w-lg font-light text-white/55">
                   Start your 14-day free trial. No credit card. No commitment.
