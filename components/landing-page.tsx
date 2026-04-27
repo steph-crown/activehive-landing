@@ -367,7 +367,7 @@ export function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-2xl text-lg font-light text-white/70"
+            className="mx-auto mt-6 max-w-2xl text-base lg:text-lg font-normal text-white/70"
           >
             ActiveHive is Nigeria&apos;s all-in-one gym management platform.
             Track members, collect payments, schedule classes, and see your
@@ -502,7 +502,7 @@ export function LandingPage() {
             <h2 className="mt-3 text-4xl text-white md:text-5xl">
               THE DAILY STRUGGLES EVERY GYM OWNER KNOWS
             </h2>
-            <p className="mt-4 font-light text-white/55">
+            <p className="mt-4 font-normal text-white/55">
               If you&apos;re nodding, you&apos;re not alone — and there is a
               better way.
             </p>
@@ -522,7 +522,7 @@ export function LandingPage() {
                     <point.icon size={22} className="text-primary" />
                   </div>
                   <h3 className="mt-5 text-xl text-white">{point.title}</h3>
-                  <p className="mt-2 text-sm font-light leading-relaxed text-white/50">
+                  <p className="mt-2 text-sm font-normal leading-relaxed text-white/50">
                     {point.description}
                   </p>
                 </div>
@@ -577,7 +577,7 @@ export function LandingPage() {
             <h2 className="mt-3 text-4xl text-white md:text-5xl">
               EVERYTHING YOU NEED TO RUN YOUR GYM
             </h2>
-            <p className="mt-4 font-light text-white/55">
+            <p className="mt-4 font-normal text-white/55">
               Powerful tools designed for the way Nigerian gyms actually operate
               — not adapted from a foreign product.
             </p>
@@ -597,7 +597,7 @@ export function LandingPage() {
                     <feature.icon size={22} className="text-primary" />
                   </div>
                   <h3 className="mt-5 text-xl text-white">{feature.title}</h3>
-                  <p className="mt-2 text-sm font-light leading-relaxed text-white/50">
+                  <p className="mt-2 text-sm font-normal leading-relaxed text-white/50">
                     {feature.description}
                   </p>
                 </div>
@@ -623,7 +623,7 @@ export function LandingPage() {
               <h2 className="mt-3 text-4xl text-white md:text-5xl">
                 THE PLATFORM GYM OWNERS TRUST
               </h2>
-              <p className="mt-4 font-light text-white/55">
+              <p className="mt-4 font-normal text-white/55">
                 Join hundreds of gym owners across Nigeria who use ActiveHive to
                 run tighter operations and grow faster.
               </p>
@@ -744,7 +744,7 @@ export function LandingPage() {
             <h2 className="mt-3 text-4xl text-white md:text-5xl">
               REAL GYMS. REAL RESULTS.
             </h2>
-            <p className="mt-4 font-light text-white/55">
+            <p className="mt-4 font-normal text-white/55">
               Gym owners across Nigeria chose ActiveHive to stop the chaos and
               start growing.
             </p>
@@ -770,7 +770,7 @@ export function LandingPage() {
                       />
                     ))}
                   </div>
-                  <p className="flex-1 text-sm font-light leading-relaxed text-white/70">
+                  <p className="flex-1 text-sm font-normal leading-relaxed text-white/70">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <div className="mt-6 flex items-center gap-3">
@@ -809,7 +809,7 @@ export function LandingPage() {
             <h2 className="mt-3 text-4xl text-white md:text-5xl">
               WHY GYM OWNERS SWITCH TO ACTIVEHIVE
             </h2>
-            <p className="mt-4 font-light text-white/55">
+            <p className="mt-4 font-normal text-white/55">
               Everything you&apos;re doing manually today, automated tomorrow.
             </p>
           </motion.div>
@@ -891,7 +891,7 @@ export function LandingPage() {
                 YOUR FITNESS JOURNEY,{" "}
                 <span className="text-primary">UPGRADED</span>
               </h2>
-              <p className="mt-4 font-light text-white/55">
+              <p className="mt-4 font-normal text-white/55">
                 The ActiveHive mobile app gives gym members the tools to stay
                 consistent, connected, and in control of their fitness.
               </p>
@@ -919,7 +919,7 @@ export function LandingPage() {
                 >
                   <IconBrandApple size={28} className="text-white" />
                   <div>
-                    <p className="text-[10px] font-light text-white/45">
+                    <p className="text-[10px] font-normal text-white/45">
                       Download on the
                     </p>
                     <p className="text-sm font-medium text-white">App Store</p>
@@ -931,7 +931,7 @@ export function LandingPage() {
                 >
                   <IconBrandAndroid size={28} className="text-white" />
                   <div>
-                    <p className="text-[10px] font-light text-white/45">
+                    <p className="text-[10px] font-normal text-white/45">
                       Get it on
                     </p>
                     <p className="text-sm font-medium text-white">
@@ -1054,7 +1054,7 @@ export function LandingPage() {
             <h2 className="mt-3 text-4xl text-white md:text-5xl">
               SIMPLE, TRANSPARENT PRICING
             </h2>
-            <p className="mt-4 font-light text-white/55">
+            <p className="mt-4 font-normal text-white/55">
               Choose the plan that fits your gym. Every plan starts with a
               14-day free trial — no credit card required.
             </p>
@@ -1089,7 +1089,7 @@ export function LandingPage() {
                   )}
                   <div className="relative">
                     <h3 className="text-2xl text-white">{plan.name}</h3>
-                    <p className="mt-1 text-sm font-light text-white/45">
+                    <p className="mt-1 text-sm font-normal text-white/45">
                       {plan.description}
                     </p>
                     <div className="mt-5">
@@ -1152,7 +1152,7 @@ export function LandingPage() {
             <h2 className="mt-3 text-4xl text-white md:text-5xl">
               FREQUENTLY ASKED QUESTIONS
             </h2>
-            <p className="mt-4 font-light text-white/55">
+            <p className="mt-4 font-normal text-white/55">
               Everything you need to know about ActiveHive.
             </p>
           </motion.div>
@@ -1174,7 +1174,7 @@ export function LandingPage() {
                   <AccordionTrigger className="text-left text-sm font-sans font-medium text-white hover:text-primary hover:no-underline [&[data-state=open]]:text-primary">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm font-light text-white/50">
+                  <AccordionContent className="text-sm font-normal text-white/50">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -1203,7 +1203,7 @@ export function LandingPage() {
                     ACTIVEHIVE GETS PRETTY CLOSE.
                   </span>
                 </h2>
-                <p className="mx-auto mt-6 max-w-lg font-light text-white/55">
+                <p className="mx-auto mt-6 max-w-lg font-normal text-white/55">
                   Start your 14-day free trial. No credit card. No commitment.
                   10 minutes to set up — and you&apos;re running.
                 </p>
@@ -1239,7 +1239,7 @@ export function LandingPage() {
           <div className="grid gap-10 md:grid-cols-4">
             <div>
               <Logo path="/" />
-              <p className="mt-4 text-sm font-light text-white/35">
+              <p className="mt-4 text-sm font-normal text-white/35">
                 The all-in-one platform for gym management in Nigeria.
               </p>
             </div>
