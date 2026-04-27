@@ -18,62 +18,103 @@ import {
   IconChartBar,
   IconCheck,
   IconChevronRight,
+  IconCreditCard,
   IconDeviceMobile,
   IconMapPin,
   IconQrcode,
   IconShield,
   IconStar,
   IconUsers,
+  IconX,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { APP_URL } from "@/lib/urls";
+
+const painPoints = [
+  {
+    icon: IconChartBar,
+    title: "You're tracking members in Excel or a notebook",
+    description:
+      "Every day, someone's record is missing, outdated, or just wrong — and you won't find out until it becomes a problem.",
+  },
+  {
+    icon: IconBell,
+    title: "Subscriptions expire and members disappear",
+    description:
+      "Without automated reminders, members forget to renew. By the time you notice, they've already joined the gym down the road.",
+  },
+  {
+    icon: IconCreditCard,
+    title: "You can't tell if your gym is actually profitable",
+    description:
+      "Payments come in via cash, transfer, and card. Nobody has a complete picture of what was actually collected this month.",
+  },
+  {
+    icon: IconCalendar,
+    title: "Attendance is still a paper register at reception",
+    description:
+      "Members sign for each other, staff falsify entries, and there's no way to audit it. Fraud is invisible until money is gone.",
+  },
+  {
+    icon: IconMapPin,
+    title: "Managing more than one location feels impossible",
+    description:
+      "Each branch runs differently. Staff call you constantly. You have no single view of what's happening across your business.",
+  },
+  {
+    icon: IconUsers,
+    title: "You can't tell what your staff are actually doing",
+    description:
+      "No visibility into trainer assignments, check-in logs, or daily operations. Accountability runs on trust alone.",
+  },
+];
 
 const features = [
   {
     icon: IconUsers,
     title: "Member Management",
     description:
-      "Efficiently manage your gym members with comprehensive profiles, membership tracking, and automated communications.",
+      "Complete profiles with payment history, subscription status, and attendance records. Know who's active, at risk, or about to churn — before it costs you.",
+  },
+  {
+    icon: IconQrcode,
+    title: "QR Code Check-In",
+    description:
+      "Every member gets a unique QR code. They scan at the door — entry is logged instantly. No paper registers, no disputes, no fraud. Full attendance history always visible.",
   },
   {
     icon: IconCalendar,
-    title: "Class Scheduling",
+    title: "Class Scheduling & Booking",
     description:
-      "Create and manage fitness classes with trainer assignments, capacity tracking, and automated scheduling.",
-  },
-  {
-    icon: IconChartBar,
-    title: "Analytics & Reports",
-    description:
-      "Get insights into your gym's performance with detailed analytics, revenue reports, and member statistics.",
-  },
-  {
-    icon: IconMapPin,
-    title: "Multi-Location Support",
-    description:
-      "Manage multiple gym locations from a single dashboard with location-specific settings and reporting.",
-  },
-  {
-    icon: IconBarbell,
-    title: "Facility Management",
-    description:
-      "Track and manage your gym facilities, equipment, and amenities across all locations.",
+      "Create classes, assign trainers, and set capacity limits. Members book online. You see real-time attendance without picking up the phone.",
   },
   {
     icon: IconShield,
-    title: "Secure & Reliable",
+    title: "Subscription & Payments",
     description:
-      "Enterprise-grade security with data encryption, role-based access control, and regular backups.",
+      "Track every membership plan, renewal date, and payment in one place. Automated reminders go out before subscriptions expire — you stop chasing, members start renewing.",
+  },
+  {
+    icon: IconBarbell,
+    title: "Staff & Trainer Management",
+    description:
+      "Set role-based access for staff, manage trainer assignments, and track daily activity. Your team handles what they need to — you see everything they do.",
+  },
+  {
+    icon: IconChartBar,
+    title: "Analytics & Marketing",
+    description:
+      "Real-time revenue dashboards, member growth reports, and built-in SMS and email campaigns. Re-engage inactive members, send promos, and know exactly if your gym is making money.",
   },
 ];
 
 const benefits = [
-  "Streamline your gym operations",
-  "Increase member retention",
-  "Reduce administrative workload",
-  "Gain valuable business insights",
-  "Scale across multiple locations",
-  "24/7 customer support",
+  "Know which members are active, expiring, or overdue at a glance",
+  "QR check-in replaces your paper register — permanently",
+  "Automated renewal reminders slash your churn rate",
+  "Real-time revenue dashboard — finally know if you're profitable",
+  "Manage multiple gym locations from a single screen",
+  "Free onboarding support and dedicated local customer service",
 ];
 
 const gymGoerFeatures = [
@@ -89,10 +130,55 @@ const gymGoerFeatures = [
 ];
 
 const statsData = [
-  { num: "500+", label: "Active Gyms" },
-  { num: "50K+", label: "Members Onboarded" },
-  { num: "₦1B+", label: "Payments Processed" },
-  { num: "99.9%", label: "Platform Uptime" },
+  { num: "500+", label: "Active Gyms in Nigeria" },
+  { num: "50K+", label: "Members Managed" },
+  { num: "₦2B+", label: "Payments Processed" },
+  { num: "10hrs+", label: "Saved Per Gym Per Week" },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Before ActiveHive, I tracked 200+ members in Excel and sent renewal reminders via WhatsApp. My renewal rate jumped from 41% to 79% in 3 months — without doing anything manually.",
+    name: "Chukwuemeka Obi",
+    gym: "FitZone Lagos",
+    location: "Victoria Island, Lagos",
+    initials: "CO",
+  },
+  {
+    quote:
+      "I run 3 gym locations in Lagos and Abuja. ActiveHive gives me one view of all three. My managers are now accountable — I see exactly what's happening at each branch from my phone.",
+    name: "Amaka Adeleke",
+    gym: "FlexFit Gyms",
+    location: "Abuja · 3 Locations",
+    initials: "AA",
+  },
+  {
+    quote:
+      "I tried two other apps — neither was built for Nigeria. ActiveHive just works. The QR check-in alone caught two staff members marking fake attendance. That paid for the subscription 10 times over.",
+    name: "Babatunde Adekunle",
+    gym: "IronHouse Gym",
+    location: "Ikeja, Lagos",
+    initials: "BA",
+  },
+];
+
+const comparisonBefore = [
+  "Excel sheets and notebooks for member records",
+  "WhatsApp messages to remind members about renewals",
+  "Paper register — no audit trail, easy to manipulate",
+  "Guessing monthly revenue from cash and transfers",
+  "Calling each branch to know what's happening",
+  "No visibility into staff or trainer performance",
+];
+
+const comparisonAfter = [
+  "Digital profiles with full history and subscription status",
+  "Automated SMS and email renewal reminders",
+  "QR check-in — every entry logged, nothing manipulated",
+  "Live revenue dashboard updated in real time",
+  "Full multi-location visibility from a single dashboard",
+  "Role-based access with complete activity logs",
 ];
 
 const pricingPlans = [
@@ -100,14 +186,14 @@ const pricingPlans = [
     name: "Starter",
     price: "₦49",
     period: "per month",
-    description: "Perfect for small gyms getting started",
+    description: "Perfect for small gyms just getting started",
     features: [
       "Up to 100 members",
       "Single location",
-      "Basic member management",
+      "Member management",
       "Class scheduling",
+      "QR code check-in",
       "Email support",
-      "Mobile app access",
     ],
     popular: false,
   },
@@ -115,15 +201,15 @@ const pricingPlans = [
     name: "Professional",
     price: "₦99",
     period: "per month",
-    description: "Ideal for growing fitness businesses",
+    description: "For growing gyms that need more power",
     features: [
       "Up to 500 members",
       "Up to 3 locations",
       "Advanced analytics",
-      "Staff management",
+      "Staff & trainer management",
+      "SMS & email marketing",
+      "Automated renewal reminders",
       "Priority support",
-      "Custom integrations",
-      "Automated reports",
     ],
     popular: true,
   },
@@ -139,8 +225,8 @@ const pricingPlans = [
       "Dedicated account manager",
       "24/7 phone support",
       "Custom development",
-      "Advanced security",
       "API access",
+      "SLA guarantee",
     ],
     popular: false,
   },
@@ -148,44 +234,44 @@ const pricingPlans = [
 
 const faqs = [
   {
+    question: "Is ActiveHive built specifically for Nigerian gyms?",
+    answer:
+      "Yes — completely. ActiveHive was designed from the ground up for Nigerian gym owners. Naira pricing, local payment methods, and support that understands how gyms work here. We're not a foreign app adapted for the market — we are the Nigerian gym management platform.",
+  },
+  {
     question: "How does the free trial work?",
     answer:
-      "You can start with a 14-day free trial with full access to all features. No credit card required. Cancel anytime during the trial period with no charges.",
+      "You get 14 days of full access to every feature — no credit card required. Set up your gym, add your members, and see exactly how ActiveHive works for your business. If it's not for you, cancel anytime. No charges, no questions.",
+  },
+  {
+    question: "How long does setup take?",
+    answer:
+      "Most gym owners are fully set up within a day. Our onboarding team guides you through importing members, configuring plans, and setting up locations. If you can use WhatsApp, you can use ActiveHive.",
   },
   {
     question: "Can I manage multiple gym locations?",
     answer:
-      "Yes! ActiveHive supports multiple locations. The Professional plan includes up to 3 locations, and the Enterprise plan offers unlimited locations with advanced multi-location management features.",
+      "Yes. The Professional plan supports up to 3 locations. Enterprise supports unlimited locations with per-location settings, staff access control, individual reporting, and a consolidated view across your entire business.",
   },
   {
-    question: "What payment methods do you accept?",
+    question: "What payment methods do you support?",
     answer:
-      "We accept all major credit cards (Visa, MasterCard, American Express) and ACH transfers for Enterprise plans. All payments are processed securely through our encrypted payment gateway.",
+      "We support card payments (Visa, Mastercard), bank transfers, and USSD. Your gym members pay via Paystack-powered checkout. Enterprise plans also support custom billing arrangements.",
   },
   {
     question: "Is my data secure?",
     answer:
-      "Absolutely. We use enterprise-grade encryption, regular security audits, and comply with industry standards. Your data is backed up daily and stored in secure, redundant data centers.",
+      "Absolutely. We use enterprise-grade encryption and daily automated backups. Role-based access means staff only see what they need to. Your member data and financial records are protected.",
   },
   {
     question: "Can I cancel my subscription anytime?",
     answer:
-      "Yes, you can cancel your subscription at any time. There are no long-term contracts or cancellation fees. Your access will continue until the end of your current billing period.",
+      "Yes — no contracts, no cancellation fees. Cancel anytime and your access continues until the end of your billing period. We'd rather earn your business every month than lock you in.",
   },
   {
-    question: "Do you offer training for my staff?",
+    question: "What support do you provide?",
     answer:
-      "Yes! We provide comprehensive onboarding, video tutorials, documentation, and live training sessions. Enterprise customers also receive dedicated training sessions with our team.",
-  },
-  {
-    question: "Can I integrate with other software?",
-    answer:
-      "ActiveHive offers integrations with popular fitness apps, payment processors, and accounting software. Enterprise plans include custom integration development based on your specific needs.",
-  },
-  {
-    question: "What kind of support do you provide?",
-    answer:
-      "All plans include email support. Professional plans get priority support with faster response times. Enterprise customers receive 24/7 phone support and a dedicated account manager.",
+      "All plans include email support. Professional plans get priority support with faster response times. Enterprise customers get 24/7 phone support and a dedicated account manager, plus onboarding calls, video tutorials, and a full help center.",
   },
 ];
 
@@ -272,9 +358,10 @@ export function LandingPage() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-6xl leading-none text-white md:text-8xl"
           >
-            POWER YOUR GYM. <span className="text-primary">GROW YOUR</span>
+            RUN YOUR GYM.{" "}
+            <span className="text-primary">NOT YOUR</span>
             <br />
-            BUSINESS.
+            SPREADSHEETS.
           </motion.h1>
 
           <motion.p
@@ -283,15 +370,40 @@ export function LandingPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mx-auto mt-6 max-w-2xl text-lg font-light text-white/70"
           >
-            The all-in-one platform for gym owners to manage members, classes,
-            staff, and locations. Streamline your operations and grow your
-            fitness business.
+            ActiveHive is Nigeria&apos;s all-in-one gym management platform.
+            Track members, collect payments, schedule classes, and see your
+            revenue — all from one place. Join 500+ gym owners who stopped
+            guessing and started growing.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.28 }}
+            className="mx-auto mt-6 flex max-w-2xl flex-wrap items-center justify-center gap-x-5 gap-y-2"
+          >
+            {[
+              "QR code check-in",
+              "Subscription reminders",
+              "Class scheduling",
+              "Revenue analytics",
+              "Staff management",
+              "Multi-location support",
+            ].map((item) => (
+              <span
+                key={item}
+                className="flex items-center gap-1.5 text-xs text-white/50"
+              >
+                <IconCheck size={12} className="shrink-0 text-primary" />
+                {item}
+              </span>
+            ))}
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.38 }}
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <a
@@ -300,7 +412,7 @@ export function LandingPage() {
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
             >
-              Start Free Trial
+              Start Free — 14 Days, No Card
               <IconChevronRight size={16} />
             </a>
             <a
@@ -320,10 +432,10 @@ export function LandingPage() {
             className="mt-16 grid grid-cols-2 gap-8 border-t border-white/10 pt-10 md:grid-cols-4"
           >
             {[
-              { num: "500+", label: "Gyms Onboarded" },
+              { num: "500+", label: "Gyms in Nigeria" },
               { num: "50K+", label: "Members Managed" },
-              { num: "99.9%", label: "Uptime" },
-              { num: "24/7", label: "Support Available" },
+              { num: "₦2B+", label: "Payments Processed" },
+              { num: "14 days", label: "Free Trial" },
             ].map(({ num, label }) => (
               <div key={label} className="text-center">
                 <p className="font-bebas text-4xl text-primary">{num}</p>
@@ -375,6 +487,75 @@ export function LandingPage() {
         </div>
       </section>
 
+      {/* ── Pain Points ── */}
+      <section className="relative bg-[#09090B] py-24">
+        <div className="relative mx-auto max-w-7xl px-4 md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <span className="text-xs font-medium uppercase tracking-widest text-primary">
+              Sound Familiar?
+            </span>
+            <h2 className="mt-3 text-4xl text-white md:text-5xl">
+              THE DAILY STRUGGLES EVERY GYM OWNER KNOWS
+            </h2>
+            <p className="mt-4 font-light text-white/55">
+              If you&apos;re nodding, you&apos;re not alone — and there is a
+              better way.
+            </p>
+          </motion.div>
+
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {painPoints.map((point, i) => (
+              <motion.div
+                key={point.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                <div className="h-full rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5">
+                    <point.icon size={22} className="text-white/35" />
+                  </div>
+                  <h3 className="mt-5 text-base font-medium text-white">
+                    {point.title}
+                  </h3>
+                  <p className="mt-2 text-sm font-light leading-relaxed text-white/40">
+                    {point.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-12 text-center"
+          >
+            <p className="text-sm text-white/35">
+              ActiveHive was built to solve every single one of these.
+            </p>
+            <a
+              href={`${APP_URL}/signup`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              See How It Works
+              <IconChevronRight size={16} />
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Features ── */}
       <section id="features" className="relative bg-[#09090B] py-24">
         <div
@@ -400,8 +581,8 @@ export function LandingPage() {
               EVERYTHING YOU NEED TO RUN YOUR GYM
             </h2>
             <p className="mt-4 font-light text-white/55">
-              Powerful features designed to help you manage every aspect of your
-              fitness business.
+              Powerful tools designed for the way Nigerian gyms actually operate
+              — not adapted from a foreign product.
             </p>
           </motion.div>
 
@@ -446,8 +627,8 @@ export function LandingPage() {
                 THE PLATFORM GYM OWNERS TRUST
               </h2>
               <p className="mt-4 font-light text-white/55">
-                Join hundreds of gym owners who trust ActiveHive to power their
-                fitness businesses.
+                Join hundreds of gym owners across Nigeria who use ActiveHive to
+                run tighter operations and grow faster.
               </p>
               <ul className="mt-10 space-y-4">
                 {benefits.map((benefit, i) => (
@@ -547,6 +728,152 @@ export function LandingPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials ── */}
+      <section className="bg-[#09090B] py-24">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <span className="text-xs font-medium uppercase tracking-widest text-primary">
+              Success Stories
+            </span>
+            <h2 className="mt-3 text-4xl text-white md:text-5xl">
+              REAL GYMS. REAL RESULTS.
+            </h2>
+            <p className="mt-4 font-light text-white/55">
+              Gym owners across Nigeria chose ActiveHive to stop the chaos and
+              start growing.
+            </p>
+          </motion.div>
+
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <motion.div
+                key={t.name}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                  <div className="mb-4 flex gap-0.5">
+                    {[...Array(5)].map((_, j) => (
+                      <IconStar
+                        key={j}
+                        size={14}
+                        className="text-primary"
+                        style={{ fill: "currentColor" }}
+                      />
+                    ))}
+                  </div>
+                  <p className="flex-1 text-sm font-light leading-relaxed text-white/70">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div className="mt-6 flex items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                      <span className="font-bebas text-lg text-primary">
+                        {t.initials}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-white">{t.name}</p>
+                      <p className="text-xs text-white/40">
+                        {t.gym} · {t.location}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Before / After ── */}
+      <section className="bg-[#09090B] py-24">
+        <div className="mx-auto max-w-5xl px-4 md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <span className="text-xs font-medium uppercase tracking-widest text-primary">
+              The Switch
+            </span>
+            <h2 className="mt-3 text-4xl text-white md:text-5xl">
+              WHY GYM OWNERS SWITCH TO ACTIVEHIVE
+            </h2>
+            <p className="mt-4 font-light text-white/55">
+              Everything you&apos;re doing manually today, automated tomorrow.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-12 grid gap-6 md:grid-cols-2"
+          >
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+              <p className="mb-6 text-xs font-medium uppercase tracking-widest text-white/30">
+                The Old Way
+              </p>
+              <ul className="space-y-4">
+                {comparisonBefore.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/10">
+                      <IconX size={10} className="text-white/35" />
+                    </div>
+                    <span className="text-sm text-white/40">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-primary/30 bg-primary/5 p-8 shadow-[rgba(250,190,18,0.06)_0px_25px_50px_-12px]">
+              <p className="mb-6 text-xs font-medium uppercase tracking-widest text-primary">
+                With ActiveHive
+              </p>
+              <ul className="space-y-4">
+                {comparisonAfter.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                      <IconCheck size={11} className="text-primary" />
+                    </div>
+                    <span className="text-sm text-white/70">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-10 text-center"
+          >
+            <a
+              href={`${APP_URL}/signup`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              Make the Switch Today
+              <IconChevronRight size={16} />
+            </a>
+          </motion.div>
         </div>
       </section>
 
@@ -650,7 +977,7 @@ export function LandingPage() {
                             Alex Johnson
                           </p>
                         </div>
-                        <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20">
                           <span className="font-bebas text-sm text-primary">
                             AJ
                           </span>
@@ -731,8 +1058,8 @@ export function LandingPage() {
               SIMPLE, TRANSPARENT PRICING
             </h2>
             <p className="mt-4 font-light text-white/55">
-              Choose the plan that fits your gym&apos;s needs. All plans include
-              a 14-day free trial.
+              Choose the plan that fits your gym. Every plan starts with a
+              14-day free trial — no credit card required.
             </p>
           </motion.div>
 
@@ -801,7 +1128,7 @@ export function LandingPage() {
                           : "border border-white/20 bg-white/5 text-white hover:bg-white/10"
                       }`}
                     >
-                      Get Started
+                      Start Free Trial
                       <IconChevronRight size={16} />
                     </a>
                   </div>
@@ -873,13 +1200,13 @@ export function LandingPage() {
               <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/15 blur-3xl" />
               <div className="relative">
                 <h2 className="text-4xl text-white md:text-5xl">
-                  TRANSFORM YOUR GYM
+                  YOUR GYM WON&apos;T RUN ITSELF.
                   <br />
-                  <span className="text-primary">MANAGEMENT TODAY</span>
+                  <span className="text-primary">ACTIVEHIVE GETS PRETTY CLOSE.</span>
                 </h2>
                 <p className="mx-auto mt-6 max-w-lg font-light text-white/55">
-                  Join ActiveHive and experience the difference. Start your free
-                  trial now — no credit card required.
+                  Start your 14-day free trial. No credit card. No commitment.
+                  10 minutes to set up — and you&apos;re running.
                 </p>
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <a
